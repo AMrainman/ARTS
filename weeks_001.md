@@ -47,6 +47,11 @@ var twoSum = function(nums, target) {
 
 ## Tip
 
+怎么做出图片倒影？效果如下：
+
+https://camo.githubusercontent.com/65209be23b936b4f648981bc8836601d6d6cde35/687474703a2f2f696d616765732e636e626c6f67732e636f6d2f636e626c6f67735f636f6d2f636f636f31732f3838313631342f6f5f636f70792e706e67
+
+
 ## Share
 
 新学习了 Grid 网格布局，[文章链接](https://juejin.im/post/5da1749cf265da5b86013198)
