@@ -45,6 +45,8 @@ var twoSum = function(nums, target) {
 
 ## Review
 
+这个太难以后再说...
+
 ## Tip
 
 怎么做出图片倒影？无论图片大小变化都不用调整代码的~效果如下：
