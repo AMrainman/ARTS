@@ -10,8 +10,8 @@
 
 ```js
 const find = function (nums, target) {
-  let rowLen = nums[0].length
-  let colLen = nums.length
+  let rowLen = nums.length
+  let colLen = nums[0].length
   if (rowLen < 1 || colLen < 1) return false
   let row = rowLen - 1
   let col = 0
