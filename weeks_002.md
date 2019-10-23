@@ -49,34 +49,26 @@ var twoSum = function(nums, target) {
 
 ## Tip
 
-怎么做出图片倒影？无论图片大小变化都不用调整代码的~效果如下：
+最近要做一个这样的效果：
 
-![](https://camo.githubusercontent.com/65209be23b936b4f648981bc8836601d6d6cde35/687474703a2f2f696d616765732e636e626c6f67732e636f6d2f636e626c6f67735f636f6d2f636f636f31732f3838313631342f6f5f636f70792e706e67)
+![](https://user-gold-cdn.xitu.io/2019/8/20/16cae04e03f3c6d1?imageslim)
 
-刚看题目我一时懵逼，不知所措~
+参考大佬的方法通过 `max-height` 定义收起的最小高度和展开的最大高度，设置两者间的过渡切换。起初总觉得怪怪的，展开和折叠的过渡之间好像有延迟并不是同步进行的，理想状态下展开和折叠应该是同时发生同时完成的。于是把过渡时间调大，发现果真有延迟：[地址](http://js.jirengu.com/qazum/1/edit?html,css,output)。
 
-方法一：
+起初以为是浏览器的渲染问题，导致两个过渡效果不能同时进行，也怀疑可能是 hover 离开时有延迟，但很快就被打脸了：[地址](http://js.jirengu.com/qariy/2/edit?html,css,output)。
 
-```css
-div{
-    -webkit-box-reflect: below; // below | above | left | right 代表下上左右   -webkit- 内核的浏览器才支持
-}
+就这样漫无目的的调试了几天（有空就看下，并没一直看），都没有发现问题的所在。
+
+今天突然想到我在 `hover` 的时候设置的 `max-height` 过大了，而正是因为这个 `max-height` 比实际高度大，导致了过渡效果在渲染的时候会计算从 `600px` 到 `0px` 的时间，而不是从实际高度 `120px` 到 `0px` 的时间。
+
+```
+展开：0 ===> 120 --------> 600
+折叠：600 --------> 120 ===> 0
 ```
 
-方法二：
+可以看出，展开的时候从 `120` 到 `600` 和折叠的时候从 `600` 到 `120` 这段时间，页面效果其实是没有变化的，而展开和折叠的高度变化正好是相反的，这就产生了时间差，导致每次折叠的时候刚开始页面都没有变化，当高度到了 `120` 才开始有过渡效果。
 
-```css
-div::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    bottom: -100%;
-    background-image: inherit; // 利用图片继承，这一般人想不到吧...
-    transform: rotateX(180deg);
-}
-```
+所以只需要设置正确的 `max-height` 就可以产生完美的过度效果了：[地址](http://js.jirengu.com/qidoh/3/edit?html,css,output)
 
 ## Share
 
