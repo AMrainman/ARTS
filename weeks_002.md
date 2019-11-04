@@ -58,4 +58,4 @@ const find = function (nums, target) {
 
 ## Share
 
-新学习了 Grid 网格布局，[文章链接](https://juejin.im/post/5da1749cf265da5b86013198)
+本期主要学习了函数式编程，[文章链接](https://juejin.im/post/5d5c92db51882505750d69b1)
