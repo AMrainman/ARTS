@@ -1,32 +1,48 @@
 ## Algorithm
 
-### 二维数组查找
+### 替换空格
 
-> 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+> 请实现一个函数，将一个字符串中的空格替换成“%20”。
 
-比如二维数组：[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
+例如，当字符串为 `We Are  Happy` ，则经过替换之后的字符串为 `We%20Are%20%20Happy` 。
 
-思路：由于数组是从左往右，从上往下递增的，所以我们从左下角开始查找，大了往右，小了往左：
+思路1：正则
 
 ```js
-const find = function (nums, target) {
-  let rowLen = nums.length
-  let colLen = nums[0].length
-  if (rowLen < 1 || colLen < 1) return false
-  let row = rowLen - 1
-  let col = 0
-  while (col <= colLen - 1 && row >= 0) {
-    let current = nums[row][col]
-    if (current < target) {
-      row--
-    } else if (current > target) {
-      col++
-    } else {
-      return true
-    }
+let str = 'We Are  Happy'
+str = str.replace(/\s/g, '%20')
+```
+思路2：递归
+
+```js
+let str = 'We Are  Happy'
+const fn = (str, symbol) => {
+  let i = str.indexOf(' ')
+  if (~i) {
+    str = str.replace(/\s/, symbol)
+    return fn(str, symbol)
+  } else {
+    return str
   }
-  return false
 }
+str = fn(str, '%20')
+```
+
+思路3：map
+
+```js
+let str = 'We Are  Happy'
+const fn = (str, symbol) => {
+  let arr = str.split('')
+  return arr.map(item => {
+    if (item === ' ') {
+      return '%20'
+    } else {
+      return item
+    }
+  }).join('')
+}
+str = fn(str, '%20')
 ```
 
 ## Review
