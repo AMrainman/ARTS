@@ -55,4 +55,4 @@ str = fn(str, '%20')
 
 ## Share
 
-本期主要学习了函数式编程，[文章链接](https://juejin.im/post/5d5c92db51882505750d69b1)
+本期主要学习了CSS的继承，[文章链接](https://juejin.im/post/5dcb89186fb9a04a752ba034)
