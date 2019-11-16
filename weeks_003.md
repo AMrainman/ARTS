@@ -51,7 +51,20 @@ str = fn(str, '%20')
 
 ## Tip
 
-谈谈 CSS 关键字 initial、inherit 和 unset
+css 使用 <img> 实现背景图片的 `cover` 等效果：
+
+```html
+<img src="https://user-gold-cdn.xitu.io/2019/11/2/16e2b3bc72d4b202?imageView2/1/w/1304/h/734/q/85/format/webp/interlace/1">
+<style>
+  img {
+    width: 200px;
+    height: 50px;
+    object-fit: cover;
+  }
+</style>
+```
+
+额，这次 tip 有点凑合，下次好好努力~~
 
 ## Share
 
