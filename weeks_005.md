@@ -42,7 +42,13 @@ function reConstructBinaryTree(pre, vin) {
 
 ## Tip
 
+为了提升动画效果，浏览器在动画进行时的每一帧中都会重新绘制整个页面，这就造成了不必要的性能浪费。
 
+GraphicsLayer 图像层是一个合成层，把需要进行动画的元素包含在这个合成层中，动画的每一帧就只会重新绘制这个合成层而不是整个页面了:
+
+```css
+transform: translate3d();
+```
 
 ## Share
 
