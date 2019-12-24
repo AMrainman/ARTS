@@ -50,6 +50,8 @@ GraphicsLayer 图像层是一个合成层，把需要进行动画的元素包含
 transform: translate3d();
 ```
 
+css 的新属性 `contain` 也可以用来提升网页性能。设置了 `contain: strict` 的元素的重绘和重排不会造成其他元素的重绘重排。
+
 ## Share
 
 总结入行四年半大方向上的错误选择，[传送门](https://juejin.im/post/5dea06cf6fb9a0166049821a)
