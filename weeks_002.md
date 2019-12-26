@@ -21,20 +21,19 @@
 思路：由于数组是从左往右，从上往下递增的，所以我们从左下角开始查找，大了往右，小了往左：
 
 ```js
-const find = function (nums, target) {
-  let rowLen = nums.length
-  let colLen = nums[0].length
-  if (rowLen < 1 || colLen < 1) return false
-  let row = rowLen - 1
-  let col = 0
-  while (col <= colLen - 1 && row >= 0) {
-    let current = nums[row][col]
-    if (current < target) {
-      row--
-    } else if (current > target) {
-      col++
-    } else {
+function Find(target, array){
+  // write code here
+  let i = array.length - 1
+  let j = 0
+  let current
+  while (j < array[0].length && i >= 0) {
+    current = array[i][j]
+    if (current === target) {
       return true
+    } else if (target > current) {
+      j++
+    } else if (target < current) {
+      i--
     }
   }
   return false
