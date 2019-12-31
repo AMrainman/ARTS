@@ -37,10 +37,9 @@ function pop() {
 
 ## Review
 
-这个太难以后再说...12asdfasdfasdf34
+这个太难以后再说...
 
 ## Tip
-阿斯asdfasdfasdf蒂芬
-asdfsdf
+
 ## Share
 
