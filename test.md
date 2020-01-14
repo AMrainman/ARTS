@@ -34,7 +34,7 @@ function pop() {
   return  arr2.pop()
 }
 ```
-
+f
 ## Review
 
 这个太难以后再说...
@@ -42,4 +42,4 @@ function pop() {
 ## Tip
 
 ## Share
-
+a
